@@ -1,0 +1,60 @@
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+@mixin background($url) {
+	background: $url left 14px center no-repeat;
+}
+.menu{
+	padding: 10px 30px;
+
+	.menu-item{
+		display: block;
+		font: 14px/3.5 "Microsoft Yahei";
+		padding-right: 20px;
+		border-bottom: 1px solid #f3f3f3;
+		h1{
+			padding-left: 60px;
+			img{
+				display: inline-block;
+				padding-left: 10px;
+				vertical-align: middle;
+			}
+		}
+		.submenu{
+			display: none;
+			padding-left: 60px;
+			line-height: 36px;
+		}
+	}
+	.menu-item:focus .submenu{
+		display: block;
+		outline: none;//when focus ,there is a blue outline default
+	}
+	.hardware h1{
+
+		@include background(url(/images/hardware.png));
+	}
+	.os h1{
+		@include background(url(/images/os.png));
+		// background: url(/images/os.png) left 14px center no-repeat;
+	}
+	.interface h1{
+		@include background(url(/images/interface.png));
+	}
+	.app h1{
+		@include background(url(/images/app.png));
+	}
+	.data h1{
+		@include background(url(/images/data.png));
+	}
+}
+
+.main-body{
+	margin: 0 auto;
+	.right{
+		overflow: hidden;
+	}
+}

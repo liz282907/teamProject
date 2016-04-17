@@ -1,0 +1,37 @@
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.menu {
+  padding: 10px 30px; }
+  .menu .menu-item {
+    display: block;
+    font: 14px/3.5 "Microsoft Yahei";
+    padding-right: 20px;
+    border-bottom: 1px solid #f3f3f3; }
+    .menu .menu-item h1 {
+      padding-left: 60px; }
+    .menu .menu-item .submenu {
+      display: none;
+      padding-left: 60px;
+      line-height: 36px; }
+  .menu .menu-item:focus .submenu {
+    display: block;
+    outline: none; }
+  .menu .hardware h1 {
+    background: url(/images/hardware.png) left 14px center no-repeat; }
+  .menu .os h1 {
+    background: url(/images/os.png) left 14px center no-repeat; }
+  .menu .interface h1 {
+    background: url(/images/interface.png) left 14px center no-repeat; }
+  .menu .app h1 {
+    background: url(/images/app.png) left 14px center no-repeat; }
+  .menu .data h1 {
+    background: url(/images/data.png) left 14px center no-repeat; }
+
+.main-body {
+  margin: 0 auto; }
+  .main-body .right {
+    overflow: hidden; }
