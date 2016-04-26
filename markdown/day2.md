@@ -3,3 +3,5 @@
 ```
 app.use(express.static(path.join(__dirname, 'public'),{maxAge:1000*10}));
 ```
+
+2.gulpfile.js里面的路径是相对于gulpfile的。其他的是相对于express的静态文件路径的

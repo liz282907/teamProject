@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title><%= title %></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<script type="text/javascript" src="/javascripts/lib/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<% include header%>
+	<main class="" id="fileList">
+	    <!-- upload excel button  -->
+	    <div class="">
+	    	<input type="file" name="file" class="inputfile" />
+		<button class="submit">上传检测报告</button>
+	    </div>
+<!-- 		<form method="post" action="/tel/submit" enctype="multipart/form-data">
+		<input type="file" name="file"/>
+		<input type="submit" value="上传检测报告"/>
+		</form> -->
+		<!-- terminal-list -->
+		<div class=""></div>
+	</main>
+	<% include footer%>
+
+
+</body>
+<script type="text/javascript" src="/javascripts/terminalList.js"></script>
+</html>
+

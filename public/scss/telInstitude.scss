@@ -15,12 +15,15 @@
 		font: 14px/3.5 "Microsoft Yahei";
 		padding-right: 20px;
 		border-bottom: 1px solid #f3f3f3;
+
 		h1{
 			padding-left: 60px;
 			img{
+				cursor: pointer;
 				display: inline-block;
 				padding-left: 10px;
 				vertical-align: middle;
+
 			}
 		}
 		.submenu{
@@ -30,7 +33,7 @@
 		}
 	}
 	.menu-item:focus .submenu{
-		display: block;
+		// display: block;
 		outline: none;//when focus ,there is a blue outline default
 	}
 	.hardware h1{
@@ -49,6 +52,19 @@
 	}
 	.data h1{
 		@include background(url(/images/data.png));
+	}
+
+	.open{
+		color: #b63b4d;
+		img{
+			transition: transform 0.4s linear;
+
+			transform-origin:center center;
+			-webkit-transform-origin:center center;
+			transform:rotate(180deg);
+			-webkit-transform:roate(180deg);
+
+		}
 	}
 }
 
