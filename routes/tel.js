@@ -12,20 +12,30 @@ var upload = multer({
 			return cb(null,false,new Error("请上传excel文件"));
 		}
 		cb(null,true);
-	}});
+	}}).single('excel');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('telInstitude', { title: '泰尔实验室' });
 });
-router.post('/upload', upload.single('excel'),function(req,res,next){
-	if(req.fileValidationError){
+router.post('/upload',function(req,res,next){
+	debugger;
+	upload(req,res,function(err){
+		if(err){
+			console.log("multer error ",err);
+			return;
+		}
+		if(req.fileValidationError){
 		res.end(req.fileValidationError);
-	}
-	else {
-		console.log("server ",req.files['excel'][0]);
-		res.end(req.files['excel'][0]);
-	}
+		next(new Error(""))
+		}
+		else {
+			console.log("server ",JSON.strinfify(req);
+			res.end(req.file);
+		}
+
+	});
+
 	//req.file req,body=text fields
 });
 router.get('/upload',list);
