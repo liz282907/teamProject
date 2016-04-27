@@ -1,17 +1,21 @@
 // var $ = require('jQuery');
 // var FormData = require('form-data');   //可以不加？
-var form = new FormData();
 
 
-form.append("excel_file",$(".inputfile").get(0).files[0]);
+
+
 $("#fileList").on("click",".submit",function(){
+	debugger;
+		var form = new FormData();
 
+		form.append("excel",$(".inputfile").get(0).files[0]);
+		console.log("upload file ",JSON.stringify(form));
 		var request = $.ajax({
 			url: '/tel/upload',
 			method:'post',
-			processData:false,
-			contentType:false,
 			data:form,
+			processData: false,
+			contentType: false,
 			cache:false,
 			success:function(data,textStatus,jqXHR){
 				console.log("-------",data);

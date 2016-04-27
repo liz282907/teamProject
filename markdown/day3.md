@@ -13,3 +13,12 @@ When one sets the contentType option to false, it forces jQuery not to add a Con
 
 
 tel.js里面的cb怎么调用
+
+filename:function(file,req,cb){
+        crypto.pseudoRandomBytes(16, function (err, raw) {
+          if (err) return cb(err)
+
+          cb(null, raw.toString('hex') + path.extname(file.originalname))
+        })
+        return file.originalname
+    },
