@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* 基本元素样式 */
+$a-normal-color: #000;
+$current-color: #ff6000;
+$green: #5ba710;
+$yellow: #ffa800;
+$recommend-bg: #654c3d;
+$border-color: #e4e4e4;
+$text-back: #454545;
+
+/*checkbox border*/
+$checkbox-border-color: #7f7e80;
+
+$headerIcons: sprite-map("header/*.png");
+
+$pinIcons: sprite-map("pin/*.png");
+/**/
+$pinStar: sprite-map("star/*.png");
+/**/
+$instockIcons: sprite-map("instock/*.png");

@@ -1,0 +1,106 @@
+// Sizing shortcuts
+
+@mixin size($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size,$size);
+}
+
+
+// clearfix
+@mixin clearfix() {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin transform($left) {
+  -webkit-transition: -webkit-transform .2s linear;
+  -moz-transition: -moz-transform .2s linear;
+  -o-transition: -o-transform .2s linear;
+  transition: transform .2s linear;
+
+  &:hover{
+    -webkit-transform: translateX($left);
+    -moz-transform: translateX($left);
+    -ms-transform: translateX($left);
+    -o-transform: translateX($left);
+    transform: translateX($left);
+  }
+}
+
+@mixin scale($scale) {
+  -webkit-transition: -webkit-transform .2s linear;
+  -moz-transition: -moz-transform .2s linear;
+  -o-transition: -o-transform .2s linear;
+  transition: transform .2s linear;
+
+  &:hover{
+    -webkit-transform: scale($scale);
+    -moz-transform: scale($scale);
+    -ms-transform: scale($scale);
+    -o-transform: scale($scale);
+    transform: scale($scale);
+  }
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+}
+
+// Resize anything
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin  text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// User select
+// for selecting text on the page style
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select; // IE10+
+          user-select: $select;
+}

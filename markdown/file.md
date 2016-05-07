@@ -56,6 +56,14 @@ processData也要设为false,否则jQuery会将你的formdata转为string类型�
 2. 如果希望重命名的话（现在的官方文档中，只支持dest/storage、filefilter、limits，不支持其他如rename等，因此只能用diskStorage比较好）。
 此时需要注意的是，如果destination是一个函数，那么目录需要是已创建好的，如果dest是传的string，那么如果不存在文件夹，multer会帮你新建。
 
+3. node-xlsx
+xlsx -> array of json(rows)
+![](http://i4.piimg.com/5f18ec75fa35aac3.png)
+[{"name":"Sheet1","data":[["id","system","是否合格"],[1,"ios","是"],[2,"android","是"],[3,"wp","否"]]},
+{"name":"Sheet2","data":[]},
+{"name":"Sheet3","data":[]}]
+
+
 ###todo 
 1. read excel
 [read exce with node](http://www.cnblogs.com/ajun/p/4171384.html) 

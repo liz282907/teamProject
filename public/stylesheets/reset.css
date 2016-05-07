@@ -1,8 +1,14 @@
 html,body, h1, h2, h3, h4, h5, h6, hr, p, ul, ol, li, pre, form, fieldset, legend,
 button, input, textarea, th, td,img
-{ margin:0; padding:0; }
+{
+	margin:0; padding:0;
+	font-size: 12px;
+}
 
-/*body, button, input,textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }*/
+body, button, input,textarea {
+	font:300 1em/1.8 Microsoft Yahei,  sans;
+	/*font:12px/1.5tahoma, arial, \5b8b\4f53; }*/
+}
 
 h1, h2, h3, h4, h5, h6{ font-size:100%; }
 
@@ -16,6 +22,7 @@ a:hover { text-decoration:none; }
 img { border:0;
   border-style: none;
 }
+em{font-style: normal;}
 
 select,input,textarea{
 	outline: none;
@@ -33,4 +40,14 @@ input[type="submit"]{
 
 div:focus{
 	outline: none;
+}
+
+.clearfix:after{
+	content: "";
+	display:block;
+	clear:both;
+	height: 0;
+}
+.clearfix{
+	display: inline-block;
 }

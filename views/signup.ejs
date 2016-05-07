@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title><%= title %></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css/auth/signup.css">
+	<script type="text/javascript" src="/javascripts/lib/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/javascripts/lib/messages_zh.js"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.validate.js"></script>
+</head>
+<body>
+	<% include header%>
+	<div class="signup-content">
+		<ul class="login-tab clearfix">
+			<li class="current" data-content="personal-register">
+				<a href="javascript:;">
+					<i class="iconfont">&#xe665;</i>
+					<span>我是普通用户</span>
+				</a>
+			</li>
+			<li data-content="admin-register">
+				<a href="javascript:;">
+					<i class="iconfont">&#xe660;</i>
+					<span>我是管理员</span>
+				</a>
+			</li>
+		</ul>
+		<div class="require-form">
+			<h2 class="form-title"><em>填写注册信息</em></h2>
+			<form class="register_step_1">
+				<div class="form-item clearfix">
+					<label for="name"><span class="iconfont">&#xe666;</span>用户名：</label>
+					<input id="name" name="name" placeholder="用户名要求5-20个字符" type="text">
+					<i class="iconfont">&#xe65b;</i>
+				</div>
+				<div class="form-item clearfix">
+					<label for="password"><span class="iconfont">&#xe666;</span>请设置密码：</label>
+					<input id="password" name="password" placeholder="密码要求6个字符以上" type="password">
+					<i class="iconfont">&#xe65c;</i>
+				</div>
+				<div class="form-item clearfix">
+					<label for="confirm_password"><span class="iconfont">&#xe666;</span>请确认密码：</label>
+					<input id="confirm_password" placeholder="再次确认一遍密码" name="confirm_password" type="password">
+					<i class="iconfont">&#xe65c;</i>
+				</div>
+				<div class="form-item email-item clearfix">
+					<label for="email"><span class="iconfont">&#xe666;</span>邮箱：</label>
+					<input id="email" class="email-input" name="email" placeholder="可以使用邮箱登录哦" type="text">
+					<i class="iconfont">&#xe65d;</i>
+				</div>
+				<!-- <div class="form-item cellphone-item clearfix">
+					<label for="cellphone"><span class="iconfont">&#xe666;</span>手机号：</label>
+					<input id="cellphone" class="cellphone-input" name="mobile" placeholder="可以使用手机号登录哦" type="text">
+					<i class="iconfont">&#xe65d;</i>
+				</div> -->
+
+				<div class="form-item verification-item clearfix">
+					<label for="verification"><span class="iconfont">&#xe666;</span>验证码：</label>
+					<input id="verification" style="width:145px;" class="verification" name="img-captcha" type="text">
+					<img class="verification-img" style="float:left;height:40px;" src="/captcha" onclick="this.src='/captcha?'+new Date().getTime()" title="点击重新获取">
+				</div>
+				<div class="submit-item">
+					<input id="submit" class="orange-btn step1-submit" type="button" value="提交注册">
+				</div>
+			</form>
+		</div>
+		<div class="register-tip">
+
+		</div>
+
+	</div>
+
+
+
+	<% include footer%>
+
+
+</body>
+<script type="text/javascript" src="/javascripts/signup.js"></script>
+</html>
+

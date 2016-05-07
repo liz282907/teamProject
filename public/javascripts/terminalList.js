@@ -5,7 +5,6 @@
 
 
 $("#fileList").on("click",".submit",function(){
-	debugger;
 		var form = new FormData();
 
 		form.append("excel",$(".inputfile").get(0).files[0]);
@@ -18,13 +17,19 @@ $("#fileList").on("click",".submit",function(){
 			contentType: false,
 			cache:false,
 			success:function(data,textStatus,jqXHR){
-				console.log("-------",data);
-				$(".submit").text("上传成功");
-				console.log("---receive data "+data);
+				// var receivedData = JSON.parse(data);
+				if(data.statusCode==205){
+					console.log(data.message);
+					$(".submit").text(data.message);
+				}
+				else
+					$(".submit").text(data);
 			},
 			error:function(jqXHR,textStatus,errorThrown){
-				// alert(XMLHttpRequest.status);    //http响应状态
-    			// alert(XMLHttpRequest.readyState);//5个状态
+				alert("error   ",textStatus);
+				console.log("error   ",errorThrown);
+				console.log("error   ",jqXHR.status);
+				alert("error   ",jqXHR.responseText);
 
 			}
 		}).done(function(){

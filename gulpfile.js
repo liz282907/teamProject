@@ -3,11 +3,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('sass',function(){
-	return gulp.src('./public/scss/*.scss')
+	return gulp.src('./public/scss/**/*.scss')
 	.pipe(sass().on('error',sass.logError))
-	.pipe(gulp.dest('./public/stylesheets/css'));
+	.pipe(gulp.dest('./public/stylesheets'));
 });
 
 gulp.task('sass:watch',function(){
-	gulp.watch('./public/scss/*.scss',[sass]);
-})
+	gulp.watch('./public/scss/**/*.scss',[sass]);
+});
+
+gulp.task("default",["sass","sass:watch"]);
